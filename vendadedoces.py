@@ -10,26 +10,26 @@ def oi(doce):
     novo = Checkbutton(master=meio_baixo,  text=doce, bd=5, relief='raise', command=d)
     novo.pack(side=TOP)
 def menu():
-    #definitr o titulo e os doces
+    #define title
     titulo = 'Venda de doces 9º ano.     '+ datetime.datetime.today().strftime('   %d/%m/%Y')
-    #criar uma tela
+    #create a screen
     tela = Tk ()
     tela.geometry('750x600+0+0')
     tela.title('Venda De Doces')
 
-    #criar um frame no topo
+    #create a frame on top
     topo = Frame(tela, width = 750, height = 150, bd=9, relief='raise')
     topo.pack(side = TOP)
     #por o titulo
     texto_topo = Label(topo, font=('courier', 30), text=titulo)
     texto_topo.pack()
 
-    #Criar um frame na esquerda
+    #create frame on left
     esquerda = Frame(tela, width = 250, height = 550, bd=8, relief='raise')
     esquerda.pack(side = LEFT)
     esquerda.pack_propagate(0)
 
-    #Criar um frame no meio, embaixo e em cima
+    #create frame on midle, top and bottom
     meio = Frame(tela, width = 250, height = 550, bd = 8,  relief='raise')
     meio.pack(side = LEFT)
     meio.pack_propagate(0)
@@ -42,24 +42,28 @@ def menu():
     meio_cima.pack_propagate(0)
     
 
-    #Criar um frame na direita
+    #create frame on left
     direita = Frame(tela, width = 250, height = 550, borderwidth=8, relief='raise')
     direita.pack(side = LEFT)
     direita.pack_propagate(0)
 
-    #adicionar texto para o meio e para a direita
+    #create text for midle and right
     texto_meio = Label(meio_cima, font=('courier', 18), text='Pagamento:')
     texto_meio.pack(side= TOP)
     texto_meio_b = Label(meio_baixo, font=('courier', 18), text='Pedido:')
     texto_meio_b.pack(side= TOP)
     texto_direita = Label(direita, font=('courier', 18), text='Vendidos:')
     texto_direita.pack(side= TOP)
+    
+    #create a new candy button
     def addc():
-        texto = input('qual doce?')
+        texto = input('which candy?')
         i = Button(esquerda, text=(texto), width = 250, height = 2, activebackground = 'Gray', command = oi(texto),  bd = 5, relief='raise', font =('courier', 20))
         i.pack(side=TOP)
+        
+    #add candy button
     global adicionar
-    adicionar = Button(esquerda, bd= 4, font='courier', relief='raise', text= 'adicionar doce', command=addc)
+    adicionar = Button(esquerda, bd= 4, font='courier', relief='raise', text= 'add candy', command=addc)
     adicionar.pack(side=BOTTOM)
     
 
