@@ -58,7 +58,9 @@ def menu():
     #create a new candy button
     def addc():
         texto = input('which candy?')
-        i = Button(esquerda, text=(texto), width = 250, height = 2, activebackground = 'Gray', command = oi(texto),  bd = 5, relief='raise', font =('courier', 20))
+        the_candy = Frame(esquerda, bd = 5, relief ='raise')
+        the_candy.pack()
+        i = Button(the_candy, text=(texto), width = 245, height = 2, activebackground = 'Gray', command = oi(texto),  bd = 5, relief='raise', font =('courier', 20))
         i.pack(side=TOP)
         
     #add candy button
